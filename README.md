@@ -35,8 +35,9 @@ This is an example to show how to direct to a URL link from pdf file. In the exa
 
 ## An advanced example 
 <div align="center">
-	<img src="https://github.com/Leviyu/PDFCheck/blob/master/WORKDIR/advanced_example.png"><br><br>
+  <img src="https://github.com/Leviyu/PDFCheck/blob/master/WORKDIR/advanced_example.png"><br><br>
 </div>
+
 
 
 
