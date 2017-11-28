@@ -1,0 +1,23 @@
+[ /_objdef {ZaDb} /type /dict /OBJ pdfmark
+[ {ZaDb} <<
+    /Type /Font
+    /Subtype /Type1
+    /Name /ZaDb
+    /BaseFont /ZapfDingbats
+>> /PUT pdfmark
+[ /_objdef {Helv} /type /dict /OBJ pdfmark
+[ {Helv} <<
+    /Type /Font
+    /Subtype /Type1
+    /Name /Helv
+    /BaseFont /Helvetica
+>> /PUT pdfmark
+[ /_objdef {aform} /type /dict /OBJ pdfmark
+[ /_objdef {afields} /type /array /OBJ pdfmark
+[ {aform} <<
+    /Fields {afields}
+    /DR << /Font << /ZaDb {ZaDb} /Helv {Helv} >> >>
+    /DA (/Helv 0 Tf 0 g)
+    /NeedAppearances true
+>> /PUT pdfmark
+[ {Catalog} << /AcroForm {aform} >> /PUT pdfmark
