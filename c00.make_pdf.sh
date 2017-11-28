@@ -13,6 +13,7 @@ set pdfmark_header = $PWD/pdfmark_sup/header.data
 
 
 
+set y_jump_vaue = -0.9i
 
 
 cat /dev/null >! $OUT
@@ -34,7 +35,7 @@ set y_end = `echo "$y_beg + $box_size"|bc`
 # ================================
 # 			Box 1
 set flag_text = box1
-pstext -Y-1i -JX -R -O -K -N << EOF >>$OUT
+pstext -Y${y_jump_vaue} -JX -R -O -K -N << EOF >>$OUT
 0 5 15 0 0 LB $flag_text
 EOF
 
@@ -58,10 +59,10 @@ EOF
 
 # =========================
 # 	Box 2
-psxy -JX -R -O -K -Y-1i << EOF >> $OUT
+psxy -JX -R -O -K -Y${y_jump_vaue} << EOF >> $OUT
 EOF
 set flag_text = box2
-pstext -Y-1i -JX -R -O -K -N << EOF >>$OUT
+pstext -JX -R -O -K -N << EOF >>$OUT
 0 5 15 0 0 LB $flag_text
 EOF
 
@@ -85,7 +86,7 @@ EOF
 psxy -JX -R -O -K -Y-1i << EOF >> $OUT
 EOF
 set flag_text = check_box_with_value
-pstext -Y-1i -JX -R -O -K -N << EOF >>$OUT
+pstext  -JX -R -O -K -N << EOF >>$OUT
 0 5 15 0 0 LB $flag_text
 EOF
 
@@ -105,11 +106,11 @@ EOF
 
 # ========================
 # 		Pdf link
-psxy -JX -R -O -K -Y-1i << EOF >> $OUT
+psxy -JX -R -O -K -Y${y_jump_vaue} << EOF >> $OUT
 EOF
 set flag_text = click_me_to_direct_to_hello_pdf
 set pdf_file = ./WORKDIR/hello.pdf
-pstext -Y-1i -JX -R -O -K -N << EOF >>$OUT
+pstext  -JX -R -O -K -N << EOF >>$OUT
 0 5 15 0 0 LB $flag_text
 EOF
 
@@ -139,11 +140,11 @@ EOF
 
 # ========================
 # 		URL link
-psxy -JX -R -O -K -Y-1i << EOF >> $OUT
+psxy -JX -R -O -K -Y${y_jump_vaue} << EOF >> $OUT
 EOF
 set flag_text = click_me_to_direct_to_google
 set URI = "www.google.com"
-pstext -Y-1i -JX -R -O -K -N << EOF >>$OUT
+pstext  -JX -R -O -K -N << EOF >>$OUT
 0 5 15 0 0 LB $flag_text
 EOF
 
