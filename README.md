@@ -1,6 +1,6 @@
 
 # PDFCheck
-This is a tool to make pdf file with checkboxes. It is original designed for the purpose of checking seismic data. See example below:
+This is a tool to make pdf file with checkboxes. It is originally designed for the purpose of checking seismic data. See example below:
 <div align="center">
   <img src="https://github.com/Leviyu/PDFCheck/blob/master/WORKDIR/example.png"><br><br>
 </div>
@@ -33,5 +33,13 @@ This is an example to show how to direct to another pdf file. In the example, th
 This is an example to show how to direct to a URL link from pdf file. In the example, the hyper link in the pdf would direct to [Google](https://google.com)
 
 
+## An advanced example 
+<div aligh="center">
+	<img src="">
+</div>
+
+
+
 # Additional Information
 Advanced usage are all compiled in [pdfmark reference manual](http://www.adobe.com/content/dam/acom/en/devnet/acrobat/pdfs/pdfmarkreference.pdf) by Adobe Acrobat.
+
