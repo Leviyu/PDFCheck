@@ -1,6 +1,11 @@
 #!/bin/tcsh
+# This is an example page to show different application of the 
+# checkbox function in PDF file.
+# Please see README file for detailed explanation
+# 
+# Contact: hongyu.hot@gmail.com
 
-
+# File parameter
 set PWD = `pwd`
 set OUT = $PWD/WORKDIR/test.ps
 set OUT_pdf = $PWD/test.pdf
@@ -11,13 +16,14 @@ set pdfmark_header = $PWD/pdfmark_sup/header.data
 
 
 cat /dev/null >! $OUT
-psxy -JX6i/1i -R0/10/0/10 -Y9i  -K -P  << EOF>! $OUT
+psxy -JX6i/1i -R0/10/0/10 -Y10.5i  -K -P  << EOF>! $OUT
 EOF
 
-# read in pdfmark header
+# Read in pdfmark header
 cat $pdfmark_header >> $OUT
 
 
+# Define check box size
 set box_size = 500
 set x_beg = 0
 set x_end = `echo "$x_beg + $box_size"|bc`
@@ -74,6 +80,26 @@ cat << EOF >> $OUT
 	/ANN pdfmark
 EOF
 
+# =========================
+# 	Box 3 with text in box
+psxy -JX -R -O -K -Y-1i << EOF >> $OUT
+EOF
+set flag_text = check_box_with_value
+pstext -Y-1i -JX -R -O -K -N << EOF >>$OUT
+0 5 15 0 0 LB $flag_text
+EOF
+
+cat << EOF >> $OUT
+[ 
+	/Subtype /Widget
+	/Rect [$x_beg $y_beg $x_end $y_end] 		% — position
+	/T ($flag_text)
+	/FT /Tx
+	/DA (/Helv 14 Tf 0 0 1 rg) 					% size and color
+	/V (0.00	$flag_text)
+	/AA << >>
+	/ANN pdfmark
+EOF
 
 
 
@@ -147,7 +173,6 @@ EOF
 
 psxy -JX -R -O << EOF>>$OUT
 EOF
-
 
 ps2pdf $OUT $OUT_pdf
 /bin/rm $OUT
